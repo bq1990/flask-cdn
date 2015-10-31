@@ -41,6 +41,7 @@ def url_for(endpoint, **values):
 
         static_folder = app.static_folder
         if (request.blueprint is not None and
+                app.blueprints.get(request.blueprint) and
                 app.blueprints[request.blueprint].has_static_folder):
             static_folder = app.blueprints[request.blueprint].static_folder
 
